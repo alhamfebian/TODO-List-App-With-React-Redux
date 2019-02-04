@@ -21,10 +21,10 @@ export const VisibilityFilters = {
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
-export const editTodo = id => {
+export const editTodo = text => {
   return {
     type: 'EDIT_TODO',
-    id
+    text
   }
 };
 
