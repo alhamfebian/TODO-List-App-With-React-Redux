@@ -1,21 +1,22 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {duplicateTodo} from '../actions'
 
-let DuplicateTodo = ({text, dispatch}) => {
-  let textDuplicate = text
-  return (
-      <div>
-        <button onClick={e => {
-          e.preventDefault()
-          dispatch(duplicateTodo(textDuplicate))
-          console.log(dispatch(duplicateTodo(textDuplicate)))
-        }}> Duplicate Todo
-        </button>
-      </div>
-  )
+class DuplicateTodo extends Component {
+
+  handleClick = (e) => {
+    e.preventDefault()
+    this.props.dispatch({type: 'DUPLICATE_TODO', text: this.props.text})
+  }
+
+  render() {
+    return (
+        <div>
+          <button onClick={this.handleClick}>
+            Duplicate Todo
+          </button>
+        </div>
+    )
+  }
 }
 
-DuplicateTodo = connect()(DuplicateTodo)
-
-export default DuplicateTodo
+export default connect()(DuplicateTodo)

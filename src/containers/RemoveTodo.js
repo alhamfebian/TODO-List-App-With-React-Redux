@@ -1,20 +1,22 @@
-import React from 'react'
+import React, {Component}  from 'react';
 import {connect} from 'react-redux'
-import {deleteTodo} from '../actions'
 
-let RemoveTodo = ({id, dispatch}) => {
-  return (
-      <div>
-        <button onClick={e => {
-          e.preventDefault()
-          dispatch(deleteTodo(id))
-          console.log(dispatch(deleteTodo(id)))
-        }}> Remove TODO
-        </button>
-      </div>
-  )
+class RemoveTodo extends Component {
+
+  handleClick = (e) => {
+    e.preventDefault()
+    this.props.dispatch({type: 'DELETE_TODO', id: this.props.id})
+  }
+
+  render() {
+    return (
+        <div>
+          <button onClick={this.handleClick}>
+            Remove Todo
+          </button>
+        </div>
+    )
+  }
 }
 
-RemoveTodo = connect()(RemoveTodo)
-
-export default RemoveTodo
+export default connect()(RemoveTodo);

@@ -9,7 +9,6 @@ export default class Todo extends React.Component {
     return (
         <li
             onClick={this.props.onClick}
-            className="list-group-item justify-content-between border-c1 c1"
         >
           <span style={{textDecoration: this.props.completed ? 'line-through' : 'none'}}
           >{this.props.text}</span>

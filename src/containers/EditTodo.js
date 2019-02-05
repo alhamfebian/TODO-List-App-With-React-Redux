@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 class EditTodo extends Component {
-  handleEdit = (e) => {
+  handleClick = (e) => {
     e.preventDefault();
     const newTodo = this.getTodo.value;
     const data = {
@@ -14,9 +14,9 @@ class EditTodo extends Component {
   render() {
     return (
         <div>
-          <form onSubmit={this.handleEdit}>
+          <form onSubmit={this.handleClick}>
             <input required type="text" ref={(input) => this.getTodo = input}
-                   defaultValue={this.props.text} placeholder="Enter Post Title" /><br /><br />
+                   defaultValue={this.props.text} placeholder="Edit Todo List" /><br /><br />
             <button>Update</button>
           </form>
         </div>
