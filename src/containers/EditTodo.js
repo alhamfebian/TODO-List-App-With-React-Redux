@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 class EditTodo extends Component {
   handleEdit = (e) => {
     e.preventDefault();
-    const newTitle = this.getTitle.value;
+    const newTodo = this.getTodo.value;
     const data = {
-      newTitle
+      newTodo
     }
     this.props.dispatch({ type: 'UPDATE_TODO', id: this.props.id, data: data })
   }
@@ -15,7 +15,7 @@ class EditTodo extends Component {
     return (
         <div>
           <form onSubmit={this.handleEdit}>
-            <input required type="text" ref={(input) => this.getTitle = input}
+            <input required type="text" ref={(input) => this.getTodo = input}
                    defaultValue={this.props.text} placeholder="Enter Post Title" /><br /><br />
             <button>Update</button>
           </form>

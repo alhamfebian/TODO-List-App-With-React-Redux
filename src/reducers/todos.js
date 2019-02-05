@@ -26,14 +26,12 @@ const todos = (state = [], action) => {
           completed: false
         }
       ]
-    case 'EDIT_TODO':
-      return state.map((todo)=>todo.id === action.id ? {...todo,editing:!todo.editing}:todo)
     case 'UPDATE_TODO':
       return state.map((todo)=>{
         if(todo.id === action.id) {
           return {
             ...todo,
-            text:action.data.newTitle,
+            text:action.data.newTodo,
             completed: false
           }
         } else return todo;

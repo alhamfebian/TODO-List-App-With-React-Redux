@@ -16,7 +16,7 @@ export default class Todo extends React.Component {
           <span>
             <RemoveTodo id={this.props.id}/>
             <DuplicateTodo text={this.props.text}/>
-            <EditTodo id={this.props.id} />
+            <EditTodo id={this.props.id} text={this.props.text} />
           </span>
         </li>
     )

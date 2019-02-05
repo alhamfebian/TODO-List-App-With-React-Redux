@@ -21,13 +21,6 @@ export const VisibilityFilters = {
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
-export const editTodo = id => {
-  return {
-    type: 'EDIT_TODO',
-    id
-  }
-};
-
 export const duplicateTodo = text => {
   return {
     type: 'DUPLICATE_TODO',
