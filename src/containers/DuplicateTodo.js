@@ -12,7 +12,7 @@ class DuplicateTodo extends Component {
   render() {
     return (
         <div>
-          <Button style={{marginRight: '10px'}} variant="warning" size="sm" onClick={this.handleClick}>
+          <Button style={{marginRight: '10px'}} className="btn btn-warning" size="sm" onClick={this.handleClick}>
             Duplicate Todo
           </Button>
         </div>

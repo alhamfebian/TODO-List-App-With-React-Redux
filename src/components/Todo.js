@@ -17,13 +17,18 @@ export default class Todo extends React.Component {
               <Col></Col>
               <Col></Col>
               <Col>
-                <h4 style={{marginRight: '20px'}} onClick={this.props.onClick}> {this.props.text} </h4>
+                <li style={{
+                  marginRight: '20px',
+                  textDecoration: this.props.completed ? 'line-through' : 'none',
+                  fontSize: '20px'}}
+                  onClick={this.props.onClick}> {this.props.text}
+                </li>
               </Col>
               <Col xs={6}>
                 <ButtonGroup>
                   <RemoveTodo id={this.props.id}/>
                   <DuplicateTodo text={this.props.text}/>
-                  <EditTodo id={this.props.id} text={this.props.text} />
+                  <EditTodo id={this.props.id} text={this.props.text} completed={this.props.completed}/>
                 </ButtonGroup>
               </Col>
               <Col></Col>

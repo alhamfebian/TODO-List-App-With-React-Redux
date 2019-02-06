@@ -16,7 +16,7 @@ const todos = (state = [], action) => {
               : todo
       )
     case 'DELETE_TODO':
-      return state.filter((data, i) => i !== action.id);
+      return state.filter((todo) => todo.id !== action.id);
     case 'DUPLICATE_TODO':
       return [
         ...state,
