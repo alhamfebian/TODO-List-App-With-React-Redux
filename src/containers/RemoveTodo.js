@@ -1,5 +1,6 @@
 import React, {Component}  from 'react';
 import {connect} from 'react-redux'
+import {Button} from 'react-bootstrap';
 
 class RemoveTodo extends Component {
 
@@ -11,9 +12,9 @@ class RemoveTodo extends Component {
   render() {
     return (
         <div>
-          <button onClick={this.handleClick}>
+          <Button style={{marginRight: '10px'}} variant="danger" size="sm" onClick={this.handleClick}>
             Remove Todo
-          </button>
+          </Button>
         </div>
     )
   }

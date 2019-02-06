@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import {Button} from 'react-bootstrap';
 
 
-
 class EditTodo extends Component {
   handleClick = (e) => {
     e.preventDefault();
@@ -15,13 +14,12 @@ class EditTodo extends Component {
   }
   render() {
     return (
-        <div>
-          <form onSubmit={this.handleClick}>
-            <input required type="text" ref={(input) => this.getTodo = input}
-                   defaultValue={this.props.text} placeholder="Edit Todo List" /><br /><br />
-            <Button variant="primary" size="xxl">Update</Button>
-          </form>
-        </div>
+      <div>
+        <form onSubmit={this.handleClick}>
+          <input required type="text" ref={(input) => this.getTodo = input} defaultValue={this.props.text} placeholder="Edit Todo List" />
+          <Button style={{marginLeft: '10px'}} variant="primary" size="sm" type="submit">Update</Button>
+        </form>
+      </div>
     );
   }
 }

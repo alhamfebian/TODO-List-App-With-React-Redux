@@ -3,21 +3,33 @@ import PropTypes from 'prop-types'
 import RemoveTodo from '../containers/RemoveTodo'
 import DuplicateTodo from '../containers/DuplicateTodo'
 import EditTodo from '../containers/EditTodo'
+import {Container} from 'react-bootstrap'
+import {Row} from 'react-bootstrap'
+import {Col} from 'react-bootstrap'
+import {ButtonGroup} from 'react-bootstrap'
 
 export default class Todo extends React.Component {
   render() {
     return (
-        <li
-            onClick={this.props.onClick}
-        >
-          <span style={{textDecoration: this.props.completed ? 'line-through' : 'none'}}
-          >{this.props.text}</span>
-          <span>
-            <RemoveTodo id={this.props.id}/>
-            <DuplicateTodo text={this.props.text}/>
-            <EditTodo id={this.props.id} text={this.props.text} />
-          </span>
-        </li>
+        <div>
+          <Container>
+            <Row>
+              <Col></Col>
+              <Col></Col>
+              <Col>
+                <h4 style={{marginRight: '20px'}} onClick={this.props.onClick}> {this.props.text} </h4>
+              </Col>
+              <Col xs={6}>
+                <ButtonGroup>
+                  <RemoveTodo id={this.props.id}/>
+                  <DuplicateTodo text={this.props.text}/>
+                  <EditTodo id={this.props.id} text={this.props.text} />
+                </ButtonGroup>
+              </Col>
+              <Col></Col>
+            </Row>
+          </Container>
+        </div>
     )
   }
 }

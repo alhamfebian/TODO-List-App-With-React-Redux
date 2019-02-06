@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Button} from 'react-bootstrap';
 
 class DuplicateTodo extends Component {
 
@@ -11,9 +12,9 @@ class DuplicateTodo extends Component {
   render() {
     return (
         <div>
-          <button onClick={this.handleClick}>
+          <Button style={{marginRight: '10px'}} variant="warning" size="sm" onClick={this.handleClick}>
             Duplicate Todo
-          </button>
+          </Button>
         </div>
     )
   }
