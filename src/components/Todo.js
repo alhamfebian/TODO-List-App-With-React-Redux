@@ -27,7 +27,7 @@ export default class Todo extends React.Component {
               <Col xs={6}>
                 <ButtonGroup>
                   <RemoveTodo id={this.props.id}/>
-                  <DuplicateTodo text={this.props.text}/>
+                  <DuplicateTodo text={this.props.text} id={this.props.id}/>
                   <EditTodo id={this.props.id} text={this.props.text} completed={this.props.completed}/>
                 </ButtonGroup>
               </Col>

@@ -6,9 +6,8 @@ class DuplicateTodo extends Component {
 
   handleClick = (e) => {
     e.preventDefault()
-    this.props.dispatch({type: 'DUPLICATE_TODO', text: this.props.text})
+    this.props.dispatch({type: 'DUPLICATE_TODO', text: this.props.text, id: this.props.id})
   }
-
   render() {
     return (
         <div>
